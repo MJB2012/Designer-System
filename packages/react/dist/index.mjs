@@ -13,8 +13,15 @@ var colors = {
   ignite300: "#00B37E",
   ignite500: "#00875F",
   ignite700: "#015F43",
-  ignite900: "#00291D"
+  ignite900: "#00291D",
 };
 
-// src/index.ts
-console.log(colors);
+// src/index.tsx
+import { jsx } from "react/jsx-runtime";
+function App() {
+  return /* @__PURE__ */ jsx("h1", {
+    style: { color: colors.ignite300 },
+    children: "hello world",
+  });
+}
+export { App };
