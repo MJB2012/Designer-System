@@ -24,12 +24,13 @@
     "@storybook/testing-library": "^0.0.13",
     "@vitejs/plugin-react": "^3.0.1",
     "babel-loader": "^8.3.0",
+    "storybook-dark-mode": "^2.0.5",
     "vite": "^4.0.4"
   },
   "dependencies": {
+    "@ignite-ui/eslint-config": "*",
     "@ignite-ui/react": "*",
     "@ignite-ui/tokens": "*",
-    "@ignite-ui/eslint-config": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
