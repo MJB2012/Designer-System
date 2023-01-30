@@ -1,6 +1,5 @@
 import { colors } from '@ignite-ui/tokens'
 
-
 export function ColorsGrid() {
   return Object.entries(colors).map(([key, color]) => {
     return (
