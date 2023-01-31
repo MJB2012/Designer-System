@@ -199,7 +199,7 @@ var Button = styled("button", {
         padding: "$2 $4"
       },
       big: {
-        fontSize: 16,
+        fontSize: 20,
         padding: "$3 $6 "
       }
     }
