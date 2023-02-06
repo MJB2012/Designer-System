@@ -1,3 +1,15 @@
-import { styled } from '../../styles'
+import { ComponentProps } from 'react'
+import { Input, Prefix, TextInputContainer } from './styles'
 
-export const TextInputContainer = styled('div', {})
+export interface TextInputProps extends ComponentProps<typeof Input> {
+  prefix?: string
+}
+
+export function TextInput({ prefix, ...props }: TextInputProps) {
+  return (
+    <TextInputContainer>
+      {!!prefix && <Prefix>{prefix}</Prefix>}
+      <Input {...props} />
+    </TextInputContainer>
+  )
+}
