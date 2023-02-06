@@ -229,8 +229,122 @@ var Heading = styled("h2", {
     size: "md"
   }
 });
+
+// src/components/Avatar/styles.ts
+import * as Avatar from "@radix-ui/react-avatar";
+var AvatarContainer = styled(Avatar.Root, {
+  borderRadius: "$full",
+  display: "inline-block",
+  width: "$12",
+  height: "$12",
+  overflow: "hidden"
+});
+var AvatarImage = styled(Avatar.Image, {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  borderRadius: "inherit"
+});
+var AvatarFallback = styled(Avatar.Fallback, {
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundColor: "$gray600",
+  color: "$gray800",
+  svg: {
+    width: "$6",
+    height: "$6"
+  }
+});
+
+// src/components/Avatar/index.tsx
+import { User } from "phosphor-react";
+import { jsx, jsxs } from "react/jsx-runtime";
+function Avatar2() {
+  return /* @__PURE__ */ jsxs(AvatarContainer, { children: [
+    /* @__PURE__ */ jsx(AvatarImage, {}),
+    /* @__PURE__ */ jsx(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ jsx(User, {}) })
+  ] });
+}
+
+// src/components/Button.tsx
+var Button = styled("button", {
+  all: "unset",
+  borderRadius: "$sm",
+  fontSize: "$sm",
+  fontWeight: "bold",
+  fontFamily: "$default",
+  textAlign: "center",
+  minWidth: 120,
+  boxSizing: "border-box",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "$2",
+  cursor: "pointer",
+  svg: {
+    width: "$4",
+    height: "$4"
+  },
+  "&:disabled:hover": {
+    background: "$gray200"
+  },
+  variants: {
+    variant: {
+      primary: {
+        color: "$white",
+        backgroundColor: "$ignite500",
+        "&:not(:disabled):hover": {
+          background: "$ignite300"
+        },
+        "&:disabled": {
+          background: "$gray200"
+        }
+      },
+      secondary: {
+        color: "$ignite300",
+        border: "2px solid $ignite500",
+        "&:not(:disabled):hover": {
+          background: "$ignite500",
+          color: "$white"
+        },
+        "&:disabled": {
+          color: "$gray200",
+          borderColor: "$gray200"
+        }
+      },
+      tertiary: {
+        color: "$gray100"
+      },
+      "&:not(:disabled):hover": {
+        color: "$white"
+      },
+      "&:disabled:hover": {
+        color: "$gray600",
+        borderColor: "$gray200"
+      }
+    },
+    size: {
+      sm: {
+        height: 38
+      },
+      md: {
+        padding: "0 $4",
+        height: 46
+      }
+    }
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md"
+  }
+});
 export {
+  Avatar2 as Avatar,
   Box,
+  Button,
   Heading,
   Text
 };
