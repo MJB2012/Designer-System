@@ -15,3 +15,4 @@ export function Avatar() {
     </AvatarContainer>
   )
 }
+Avatar.displayname = 'Avatar'
